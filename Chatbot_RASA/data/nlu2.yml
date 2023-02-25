@@ -1,0 +1,126 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: hello world
+  examples: |
+    - world
+    - programming
+    - first program
+
+- intent: name_entry
+  examples: |
+    - My name is [John](name)
+    - name: [David](name)
+    - I’m [Barbara](name). 
+    - [Susan](name)
+    - Name is [Fred](name).
+
+- intent: current_conditions
+  examples: |
+    - What is the weather?
+    
+- intent: daily_forecasts
+  examples: |
+    - What is the forecast tomorrow?
+    - What is the weather going to be like Tuesday?
+    - What is the weather for the next three days?
+    - What is the weather this weekend?
+    - What is the weather this week?
+    - What is the weather next week?
+    - What is the weather going to be like Monday?
+    - What is the weather going to be like Wednesday?
+    - What is the weather going to be like Thursday?
+    - What is the weather going to be like Friday?
+    - What is the weather going to be like Saturday?
+    - What is the weather going to be like Sunday?
+    - Which days will be sunny this week?
+    - Which days will be rainy this week?
+    - Which days will be cloudy this week?
+
+- intent: temperatures
+  examples: |
+    - What is the temperature in Celsius?
+    - What is the temperature in Kelvin?
+    - What is the temperature in Fahrenheit?
+    - Will it be cold on Monday?
+    - Will it be warm on Saturday?
+    - What's the high temperature tomorrow
+    - What's the low temperature today
+
+- intent: specific_conditions
+  examples: |
+    - When will it rain next?
+    - How windy is it?
+    - Is it going to snow?
+    - What's the humidity?
+    - What is the percieved temperature?
+    - Will there be an hurricane?
+    
+
+- intent: country_entry
+  examples: |
+    - [India](country)
+    - [US](country)
+    - [UK](country)
+    - [Finland](country)
+    - [Germany](country)
+    - [Candana](country)
+    - [Russia](country)
+    - [Japan](country)
+    - [China](country)
+    - [Malasia](country)
+    - [Singapore](country)
+
+    
+
+
+
+
