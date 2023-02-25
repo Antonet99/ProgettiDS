@@ -1,0 +1,50 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: hello world path
+  steps:
+  - intent: hello world
+  - action: action_hello_world
+
+- story: corona tracker path
+  steps:
+  - intent: corona_state
+  - action: action_corona_state
+
+- story: user supply name and country
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: name_entry
+  - action: utter_enter_country
+  - intent: country_entry 
+  - action: utter_show_name_country
+

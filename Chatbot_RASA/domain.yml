@@ -1,0 +1,67 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - hello world
+  - corona_state
+  - supply_contact_info
+  - name_entry
+  - country_entry
+
+actions:
+  - action_hello_world
+  - action_corona_state
+
+entities:
+- name
+- country
+
+slots:
+  name:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: name
+  country:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: country
+
+responses:
+  utter_greet:
+  - text: "Please enter your name?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_enter_country:
+  - text: "Please enter your country name"
+
+  utter_show_name_country:
+  - text: "Your name is {name} and belongs to {country}"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
