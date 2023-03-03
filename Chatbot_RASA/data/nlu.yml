@@ -55,27 +55,25 @@ nlu:
     - programming
     - first program
 
-- intent: name_entry
+- intent: weather
   examples: |
-    - My name is [John](name)
-    - name: [David](name)
-    - I’m [Barbara](name). 
-    - [Susan](name)
-    - Name is [Fred](name).
+    - What is the weather?
+    - Weather
+    - Give me weather
+    - [Milan](city)
+    - [New York](city)
+    - [Las Vegas](city)
+    - [Paris](city)
+    - [Berlin](city)
+    - [Rome](city)
+    - [London](city)
+    - [Madrid](city)
+    - [Lisbon](city)
+    - [Tokyo](city)
+    - [Washington](city)
 
-- intent: country_entry
-  examples: |
-    - [India](country)
-    - [US](country)
-    - [UK](country)
-    - [Finland](country)
-    - [Germany](country)
-    - [Candana](country)
-    - [Russia](country)
-    - [Japan](country)
-    - [China](country)
-    - [Malasia](country)
-    - [Singapore](country)
+
+    
 
 
 
