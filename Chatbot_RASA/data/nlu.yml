@@ -71,7 +71,112 @@ nlu:
     - [Lisbon](city)
     - [Tokyo](city)
     - [Washington](city)
+    - [San Vito Chietino](city)
+    - [Ancona](city)
+    - [Chieti](city)
+    - [Lanciano](city)
 
+
+- intent: weather_type
+  examples: |
+    - what is the [weather](wx_type) in [Berlin](city)?
+    - how's the [weather](wx_type) in [Christchurch](city)?
+    - Tell me the [weather](wx_type) in [Washington](city)
+    - [weather](wx_type) in [Auckland](city)
+    - is it [windy](wx_type) in [Auckland](city)
+    - [raining](wx_type) in [Wellington](city)
+    - [rain](wx_type) in [Auckland](city)
+    - [raining](wx_type) in [Christchurch](city)
+    - [temperature](wx_type) in [[Madrid](city)
+    - what is the [temperature](wx_type) in [San Vito Chietino](city)?
+    - [wind](wx_type) in [Milan](city)
+    - [humidity](wx_type) in [Wellington](city)
+    - air [pressure](wx_type) in [Ancona](city)
+    - [pressure](wx_type) in [Christchurch](city)
+    - what is the [pressure](wx_type) in [Washington](city)
+    - [humidity](wx_type) in [Lisbon](city)
+    - [uvi](wx_type) in [Lanciano](city)
+    - what is the [humidity](wx_type) in [Auckland](city)
+    - [rain](wx_type) [Wellington](city)
+    - what is the [weather](wx_type) in [Chieti](city)?
+    - how's the [UV index](wx_type) in [San Vito Chietino](city)?
+    - Tell me the [weather](wx_type) in [Rome](city)
+    - [weather](wx_type) in [Auckland](city)
+    - [weather](wx_type) in [Milan](city)
+    - is it [windy](wx_type) in [Auckland](city)
+    - [raining](wx_type) in [Wellington](city)
+    - is it [cloudy](wx_type) in [Lisbon](city)
+    - [rain](wx_type) in [Auckland](city)
+    - [raining](wx_type) in [Ancona](city)
+    - [temperature](wx_type) in [Auckland](city)
+    - what is the [temperature](wx_type) in [New York](city)
+    - what is the [weather](wx_type) for [Wellington](city)
+    - what is the [pressure](wx_type) in [Auckland](city)
+    - air [pressure](wx_type) in [Auckland](city)
+    - what is the [humidity](wx_type) in [Auckland](city)
+    - air [humidity](wx_type) in [Auckland](city)
+    - [uvi](wx_type) [Ancona](city)
+    - [weather](wx_type) [Wellington](city)
+    - how about [Wellington](city)
+    - [humidity] (wx_type) in [Chieti](city)
+
+
+# synonym defnitions to limit variations and to help NLU
+- synonym: current
+  examples: |
+    - currently
+    - now
+    - current
+
+- synonym: today
+  examples: |
+    - later
+    - today
+    - later today
+    - going to
+  
+- synonym: uvi
+  examples: |
+    - uvi
+    - UV
+    - UV index
+    - UVI
+
+- synonym: cloud_conditions
+  examples: |
+    - raining
+    - wet
+    - rain
+    - conditions
+    - condition
+    - clouds
+    - snow
+    - snowing
+    - sunny
+    - pissing
+    - hosing
+    - pooring
+    - cloudy
+    - rainy
+    - shining
+    - sun
+    - rainfall
+    - snowfall
+
+- synonym: temperature
+  examples: |
+    - hot
+    - cold
+    - chilly
+    - heat
+    - temp
+    - temperature
+
+- synonym: weather
+  examples: |
+    - weather
+    - wx
+    - forecast
 
     
 

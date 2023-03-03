@@ -7,9 +7,36 @@ stories:
   - intent: greet
   - action: utter_greet
 
-- story: weather path
+- story: wx_1
   steps:
   - intent: weather
   - action: action_weather
 
+- story: wx_2
+  steps:
+  - intent: weather_type
+    entities:
+    - wx_type: "temperature"
+  - action: action_weather
+
+- story: wx_3
+  steps:
+  - intent: weather_type
+    entities:
+    - wx_type: "wind"
+  - action: action_weather
+
+- story: wx_4
+  steps:
+  - intent: weather_type
+    entities:
+    - wx_type: "pressure"
+  - action: action_weather
+
+- story: wx_5
+  steps:
+  - intent: weather_type
+    entities:
+    - wx_type: "humidity"
+  - action: action_weather
 

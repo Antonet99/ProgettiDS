@@ -8,16 +8,24 @@ intents:
   - hello world
   - weather:
       use_entities: true
+  - weather_type:
+      use_entities: true
 
 entities:
   - city
+  - wx_type
 
 slots:
     city:
       type: text
       mappings:
         - type: from_entity
-          entity: city 
+          entity: city
+    wx_type:
+      type: text
+      mappings:
+        - type: from_entity
+          entity: wx_type
 
 actions:
   - action_hello_world

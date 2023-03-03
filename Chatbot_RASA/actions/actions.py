@@ -40,7 +40,7 @@ class ActionHelloWorld(Action):
         dispatcher.utter_message(text="Hello World from my first action!")
 
         return []
-
+    
 class Weather(Action):
 
     def name(self) -> Text:
@@ -51,19 +51,23 @@ class Weather(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
             
             city = tracker.get_slot('city')
-            #wx_type = tracker.get_slot['wx_type']
+            wx_type = tracker.get_slot('wx_type').lower()
+            
+            if wx_type is None:
+                wx_type = "weather"
+                
             #api_key = "74b04930d39039f068ed4796e9baf28a"
             
+            # chiamata API che ritorna JSON con info meteo
             weather_data = get_weather_data(city)
             
+            # info in variabile current_weather
             current_weather = weather_data['current']
             
             lat = weather_data['lat']
             lon = weather_data['lon']
             timezone = weather_data['timezone']
             dt = str(datetime.datetime.fromtimestamp(current_weather['dt']))
-            sunrise = str(datetime.datetime.fromtimestamp(current_weather['sunrise']))
-            sunset = str(datetime.datetime.fromtimestamp(current_weather['sunset']))
             temp = current_weather['temp']
             feels_like = current_weather['feels_like']
             pressure = current_weather['pressure']
@@ -77,7 +81,8 @@ class Weather(Action):
             else:
                 rain = 0.0
             
-            response = f"Current weather in {city} ({lat}, {lon}) at {dt}: {weather_description}\n" \
+            if wx_type=='weather': 
+                    response = f"Current weather in {city} ({lat}, {lon}) at {dt}: {weather_description}\n" \
                     f"Temperature: {temp} °C (Feels like {feels_like} °C)\n" \
                     f"Humidity: {humidity} %\n" \
                     f"Pressure: {pressure} hPa\n" \
@@ -85,7 +90,27 @@ class Weather(Action):
                     f"Wind: {wind_speed} m/s, {wind_deg}°\n" \
                     f"Rain (last hour): {rain} mm\n" \
                     f"Timezone: {timezone}"
+                    
+            # specific information
+            if wx_type=='wind':
+                response = f"The current wind speed in {city} ({lat}, {lon}) at {dt} is {wind_speed} metres per second from {wind_deg} degrees. "
             
+            if wx_type=='temperature':
+                response = f"The current temperature in {city} ({lat}, {lon}) at {dt} is {temp}°C. "
+            
+            if wx_type=='pressure':
+                response=f"The current air pressure in {city} ({lat}, {lon}) at {dt} is {pressure} hPa. "
+            
+            if wx_type=='humidity':
+                response=f"The current humidity in {city} ({lat}, {lon}) at {dt} is {humidity}%. "
+            
+            if wx_type=='uvi':
+                response=f"The current UV index in {city} ({lat}, {lon}) at {dt} is {uvi}. "
+            
+            if wx_type=='rain':
+                response=f"The rain in the last hour in {city} ({lat}, {lon}) at {dt} is {rain} mm. "
+                
             dispatcher.utter_message(response)
-
+                
             return []
+
