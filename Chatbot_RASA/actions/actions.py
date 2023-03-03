@@ -11,8 +11,8 @@ from typing import Any, Text, Dict, List
 #
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-import requests
-from weather import get_weather_data, print_weather_data
+import requests, datetime
+from weather import get_weather_data
 #
 #
 # class ActionHelloWorld(Action):
@@ -41,33 +41,51 @@ class ActionHelloWorld(Action):
 
         return []
 
-
 class Weather(Action):
 
     def name(self) -> Text:
-        return "action_weather"
+            return "action_weather"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
-        city = tracker.get_slot('city')
-        #wx_type = tracker.get_slot['wx_type']
-        #api_key = "74b04930d39039f068ed4796e9baf28a"
-        
-        weather_data = get_weather_data(city)
-        
-        temp=round(weather_data['current']['temp'])
-        pressure=round(weather_data['current']['pressure'])
-        humidity=round(weather_data['current']['humidity'])
-        wind=round(weather_data['current']['wind_speed'])
-        wind_deg=round(weather_data['current']['wind_deg'])
-        cond=(weather_data['current']['weather'][0]["description"])
-        
-        
-        
-        
-        #print(response["temp"])
-        #dispatcher.utter_message(text=print_weather_data(weather_data))
+            
+            city = tracker.get_slot('city')
+            #wx_type = tracker.get_slot['wx_type']
+            #api_key = "74b04930d39039f068ed4796e9baf28a"
+            
+            weather_data = get_weather_data(city)
+            
+            current_weather = weather_data['current']
+            
+            lat = weather_data['lat']
+            lon = weather_data['lon']
+            timezone = weather_data['timezone']
+            dt = str(datetime.datetime.fromtimestamp(current_weather['dt']))
+            sunrise = str(datetime.datetime.fromtimestamp(current_weather['sunrise']))
+            sunset = str(datetime.datetime.fromtimestamp(current_weather['sunset']))
+            temp = current_weather['temp']
+            feels_like = current_weather['feels_like']
+            pressure = current_weather['pressure']
+            humidity = current_weather['humidity']
+            uvi = current_weather['uvi']
+            wind_speed = current_weather['wind_speed']
+            wind_deg = current_weather['wind_deg']
+            weather_description = current_weather['weather'][0]['description']
+            if 'rain' in current_weather:
+                rain = current_weather['rain']['1h']
+            else:
+                rain = 0.0
+            
+            response = f"Current weather in {city} ({lat}, {lon}) at {dt}: {weather_description}\n" \
+                    f"Temperature: {temp} °C (Feels like {feels_like} °C)\n" \
+                    f"Humidity: {humidity} %\n" \
+                    f"Pressure: {pressure} hPa\n" \
+                    f"UV index: {uvi}\n" \
+                    f"Wind: {wind_speed} m/s, {wind_deg}°\n" \
+                    f"Rain (last hour): {rain} mm\n" \
+                    f"Timezone: {timezone}"
+            
+            dispatcher.utter_message(response)
 
-        return []
+            return []

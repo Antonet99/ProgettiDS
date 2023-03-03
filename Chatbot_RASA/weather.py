@@ -1,6 +1,5 @@
 import requests
 import json
-import datetime
 import sys
 
 def get_lat_lon(city):
@@ -59,54 +58,6 @@ def get_weather_data(city):
 
         sys.exit(1)
 
-    data = response.json()
+    weather_data = response.json()
 
-    weather_data = {
-        "lat": data["lat"],
-        "lon": data["lon"],
-        "timezone": data["timezone"],
-        "datetime": str(datetime.datetime.fromtimestamp(data["current"]["dt"])),
-        "main": data["current"]["weather"][0]["main"],
-        "description": data["current"]["weather"][0]["description"].title(),
-        "temp": data["current"]["temp"],
-        "feels_like": data["current"]["feels_like"],
-        "pressure": data["current"]["pressure"],
-        "humidity": data["current"]["humidity"],
-        "wind_speed": data["current"]["wind_speed"],
-        "wind_deg": data["current"]["wind_deg"],
-        "unit": "metric",
-        "lang": "en",
-    }
-    
     return weather_data
-
-def print_weather_data(weather_data):
-    
-    print(f"Location: {weather_data['lat']}, {weather_data['lon']}")
-    print(f"Timezone: {weather_data['timezone']}")
-    print(f"Current Time: {weather_data['datetime']}")
-    print(f"Weather: {weather_data['description']} ({weather_data['main']})")
-    print(f"Temperature: {weather_data['temp']}°C")
-    print(f"Feels Like: {weather_data['feels_like']}°C")
-    print(f"Pressure: {weather_data['pressure']} hPa")
-    print(f"Humidity: {weather_data['humidity']}%")
-    print(f"Wind Speed: {weather_data['wind_speed']} m/s")
-    print(f"Wind Direction: {weather_data['wind_deg']}°")
-    
-def print_weather_data2(weather_data):
-    return {
-        "Latitude": weather_data["lat"],
-        "Longitude": weather_data["lon"],
-        "Timezone": weather_data["timezone"],
-        "Datetime": weather_data["datetime"],
-        "Weather Main": weather_data["main"],
-        "Weather Description": weather_data["description"],
-        "Temperature": f"{weather_data['temp']} °C",
-        "Feels Like": f"{weather_data['feels_like']} °C",
-        "Pressure": f"{weather_data['pressure']} hPa",
-        "Humidity": f"{weather_data['humidity']} %",
-        "Wind Speed": f"{weather_data['wind_speed']} m/s",
-        "Wind Direction": f"{weather_data['wind_deg']}°",
-        "Unit": weather_data["unit"],
-        "Language": weather_data["lang"]
-    }
