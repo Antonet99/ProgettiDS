@@ -1,0 +1,19 @@
+{
+  "currently": "current",
+  "now": "current",
+  "later": "today",
+  "later today": "today",
+  "going to": "today",
+  "uv": "uvi",
+  "uv index": "uvi",
+  "uvi": "uvi",
+  "rain": "rain",
+  "raining": "rain",
+  "hot": "temperature",
+  "cold": "temperature",
+  "chilly": "temperature",
+  "heat": "temperature",
+  "temp": "temperature",
+  "wx": "weather",
+  "forecast": "weather"
+}

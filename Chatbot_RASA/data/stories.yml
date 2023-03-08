@@ -40,3 +40,10 @@ stories:
     - wx_type: "humidity"
   - action: action_weather
 
+- story: wx_6
+  steps:
+  - intent: weather_type
+    entities:
+    - wx_type: "rain"
+  - action: action_weather
+

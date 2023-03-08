@@ -51,7 +51,7 @@ class Weather(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
             
             city = tracker.get_slot('city')
-            wx_type = tracker.get_slot('wx_type').lower()
+            wx_type = tracker.get_slot('wx_type')
             
             if wx_type is None:
                 wx_type = "weather"
@@ -79,37 +79,55 @@ class Weather(Action):
             if 'rain' in current_weather:
                 rain = current_weather['rain']['1h']
             else:
-                rain = 0.0
-            
-            if wx_type=='weather': 
-                    response = f"Current weather in {city} ({lat}, {lon}) at {dt}: {weather_description}\n" \
-                    f"Temperature: {temp} °C (Feels like {feels_like} °C)\n" \
-                    f"Humidity: {humidity} %\n" \
-                    f"Pressure: {pressure} hPa\n" \
-                    f"UV index: {uvi}\n" \
-                    f"Wind: {wind_speed} m/s, {wind_deg}°\n" \
-                    f"Rain (last hour): {rain} mm\n" \
-                    f"Timezone: {timezone}"
-                    
-            # specific information
-            if wx_type=='wind':
-                response = f"The current wind speed in {city} ({lat}, {lon}) at {dt} is {wind_speed} metres per second from {wind_deg} degrees. "
-            
-            if wx_type=='temperature':
-                response = f"The current temperature in {city} ({lat}, {lon}) at {dt} is {temp}°C. "
-            
-            if wx_type=='pressure':
-                response=f"The current air pressure in {city} ({lat}, {lon}) at {dt} is {pressure} hPa. "
-            
-            if wx_type=='humidity':
-                response=f"The current humidity in {city} ({lat}, {lon}) at {dt} is {humidity}%. "
-            
-            if wx_type=='uvi':
-                response=f"The current UV index in {city} ({lat}, {lon}) at {dt} is {uvi}. "
-            
-            if wx_type=='rain':
-                response=f"The rain in the last hour in {city} ({lat}, {lon}) at {dt} is {rain} mm. "
+                rain = 0
                 
+            response = f"I'm sorry, something went bad. Try again!"
+            
+            match wx_type.lower():
+                
+                # ritorna tutto il meteo
+                case "weather":
+                    if rain > 0:
+                        response = f"Current weather in {city} ({lat}, {lon}) at {dt}: {weather_description}\n" \
+                                    f"Temperature: {temp} °C (Feels like {feels_like} °C)\n" \
+                                    f"Humidity: {humidity} %\n" \
+                                    f"Pressure: {pressure} hPa\n" \
+                                    f"UV index: {uvi}\n" \
+                                    f"Wind: {wind_speed} m/s, {wind_deg}°\n" \
+                                    f"Rain (last hour): {rain} mm\n" \
+                                    f"Timezone: {timezone}"
+                    else:
+                        response = f"Current weather in {city} ({lat}, {lon}) at {dt}: {weather_description}\n" \
+                                    f"Temperature: {temp} °C (Feels like {feels_like} °C)\n" \
+                                    f"Humidity: {humidity} %\n" \
+                                    f"Pressure: {pressure} hPa\n" \
+                                    f"UV index: {uvi}\n" \
+                                    f"Wind: {wind_speed} m/s, {wind_deg}°\n" \
+                                    f"Rain: It's not raining right now\n" \
+                                    f"Timezone: {timezone}"  
+                 
+                # ritorna il singolo parametro richiesto dall'utente
+                case "wind":
+                    response = f"The current wind speed in {city} ({lat}, {lon}) at {dt} is {wind_speed} metres per second from {wind_deg} degrees. "
+                
+                case "temperature":
+                    response = f"The current temperature in {city} ({lat}, {lon}) at {dt} is {temp}°C. "
+                
+                case "pressure":
+                    response = f"The current air pressure in {city} ({lat}, {lon}) at {dt} is {pressure} hPa. "
+                
+                case "humidity":
+                    response = f"The current humidity in {city} ({lat}, {lon}) at {dt} is {humidity}%. "
+                
+                case "uvi":
+                    response = f"The current UV index in {city} ({lat}, {lon}) at {dt} is {uvi}. "
+                
+                case "rain":      
+                    if rain != 0:
+                        response = f"The rain in the last hour in {city} ({lat}, {lon}) at {dt} is {rain} mm. "
+                    else:
+                        response=f"It's not raining right now in {city} ({lat}, {lon}). "
+
             dispatcher.utter_message(response)
                 
             return []

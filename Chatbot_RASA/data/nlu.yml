@@ -87,7 +87,7 @@ nlu:
     - [raining](wx_type) in [Wellington](city)
     - [rain](wx_type) in [Auckland](city)
     - [raining](wx_type) in [Christchurch](city)
-    - [temperature](wx_type) in [[Madrid](city)
+    - [temperature](wx_type) in [Madrid](city)
     - what is the [temperature](wx_type) in [San Vito Chietino](city)?
     - [wind](wx_type) in [Milan](city)
     - [humidity](wx_type) in [Wellington](city)
@@ -119,6 +119,8 @@ nlu:
     - [weather](wx_type) [Wellington](city)
     - how about [Wellington](city)
     - [humidity] (wx_type) in [Chieti](city)
+    - [rain](wx_type) in [Ancona](city)
+    - [rain](wx_type) [Manchester](city)
 
 
 # synonym defnitions to limit variations and to help NLU
@@ -142,26 +144,12 @@ nlu:
     - UV index
     - UVI
 
-- synonym: cloud_conditions
+- synonym: rain
   examples: |
-    - raining
-    - wet
+    - RAIN
+    - Rain
     - rain
-    - conditions
-    - condition
-    - clouds
-    - snow
-    - snowing
-    - sunny
-    - pissing
-    - hosing
-    - pooring
-    - cloudy
-    - rainy
-    - shining
-    - sun
-    - rainfall
-    - snowfall
+    - raining
 
 - synonym: temperature
   examples: |

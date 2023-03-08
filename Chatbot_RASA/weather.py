@@ -6,7 +6,7 @@ def get_lat_lon(city):
     
     url = ( 
         f"http://api.openweathermap.org/geo/1.0/direct?"
-        f"q={city}&limit=2&appid=74b04930d39039f068ed4796e9baf28a"
+        f"q={city}&limit=2&appid=7f4eb755102bc64c01058478e0fcc91a"
     )
     response = requests.get(url)
     
@@ -40,7 +40,7 @@ def get_weather_data(city):
         f"&lang=en"
         f"&units=metric"
         f"&exclude=hourly,daily,minutely"
-        f"&appid=74b04930d39039f068ed4796e9baf28a"
+        f"&appid=7f4eb755102bc64c01058478e0fcc91a"
     )
     
     try:
