@@ -80,6 +80,12 @@ class Weather(Action):
                 rain = current_weather['rain']['1h']
             else:
                 rain = 0
+            if 'alerts' in weather_data:
+                sender = weather_data['alerts'][0]['sender_name']
+                event = weather_data['alerts'][0]['event']
+                alert_descript = weather_data['alerts'][0]['description']
+            else:
+                alerts = None
                 
             response = f"I'm sorry, something went bad. Try again!"
             
@@ -87,6 +93,7 @@ class Weather(Action):
                 
                 # ritorna tutto il meteo
                 case "weather":
+                    
                     if rain > 0:
                         response = f"Current weather in {city} ({lat}, {lon}) at {dt}: {weather_description}\n" \
                                     f"Temperature: {temp} °C (Feels like {feels_like} °C)\n" \
@@ -104,7 +111,11 @@ class Weather(Action):
                                     f"UV index: {uvi}\n" \
                                     f"Wind: {wind_speed} m/s, {wind_deg}°\n" \
                                     f"Rain: It's not raining right now\n" \
-                                    f"Timezone: {timezone}"  
+                                    f"Timezone: {timezone}\n"
+                                    #f"Alerts:\n" \
+                                    #f" - sender: {sender}\n" \
+                                    #f" - event: {event}\n" \
+                                    #f" - description: {alert_descript}\n" \
                  
                 # ritorna il singolo parametro richiesto dall'utente
                 case "wind":
