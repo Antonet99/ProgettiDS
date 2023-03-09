@@ -61,19 +61,6 @@ nlu:
     - Non è possibile
     - non proprio
 
-- intent: bot_challenge
-  examples: |
-    - sei un bot?
-    - sei un umano?
-    - sei un maschio?
-    - sei una femmina?
-    - sei un uomo?
-    - sei una donna?
-    - quanti anni hai?
-    - sto parlando con un bot?
-    - sto parlando con una persona?
-    - sto parlando con un essere umano?
-
 - intent: weather
   examples: |
     - Com'è il meteo?
