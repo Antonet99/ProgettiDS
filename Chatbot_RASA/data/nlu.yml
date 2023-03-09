@@ -87,7 +87,7 @@ nlu:
     - è [ventoso](wx_type) a [Auckland](city)
     - [piove](wx_type) a [Welligton](city)
     - [pioggia](wx_type) a [Auckland](city)
-    - [pioggia](wx_type) a [Christchurch](city)
+    - [piove](wx_type) a [Christchurch](city)
     - [temperatura](wx_type) a [Madrid]( city)
     - qual è la [temperatura](wx_type) a [San Vito Chietino](city)?
     - [vento](wx_type) a [Milano](city)
@@ -146,10 +146,11 @@ nlu:
     - più tardi
     - in giornata
 
-- synonym: pioggia
+- synonym: piove
   examples: |
     - piovendo
     - piove
+    - pioggia
   
 - synonym: vento
   examples: |
