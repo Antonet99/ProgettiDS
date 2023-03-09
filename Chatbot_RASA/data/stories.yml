@@ -4,8 +4,8 @@ stories:
 
 - story: happy path
   steps:
-  - intent: greet
-  - action: utter_greet
+  - intent: saluto
+  - action: utter_saluto
 
 - story: wx_1
   steps:
@@ -16,34 +16,34 @@ stories:
   steps:
   - intent: weather_type
     entities:
-    - wx_type: "temperature"
+    - wx_type: "temperatura"
   - action: action_weather
 
 - story: wx_3
   steps:
   - intent: weather_type
     entities:
-    - wx_type: "wind"
+    - wx_type: "vento"
   - action: action_weather
 
 - story: wx_4
   steps:
   - intent: weather_type
     entities:
-    - wx_type: "pressure"
+    - wx_type: "pressione"
   - action: action_weather
 
 - story: wx_5
   steps:
   - intent: weather_type
     entities:
-    - wx_type: "humidity"
+    - wx_type: "umidità"
   - action: action_weather
 
 - story: wx_6
   steps:
   - intent: weather_type
     entities:
-    - wx_type: "rain"
+    - wx_type: "pioggia"
   - action: action_weather
 

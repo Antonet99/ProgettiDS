@@ -1,53 +1,53 @@
 version: "3.1"
 
 nlu:
-- intent: greet
+- intent: saluto
   examples: |
+    - Ciao
+    - ciao
+    - we
     - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - hei 
+    - ciao a tutti
+    - buongiorno
+    - buona sera
+    - Ehi, amico
+    - buong
+    - buonasera
+    - buon pomeriggio
+    - buonanotte
 
-- intent: goodbye
+- intent: arrivederci
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+    - arrivederci
+    - ci vediamo dopo
+    - buona notte
+    - Buona giornata
+    - ci vediamo in giro
+    - ciao ciao
+    - ci vediamo dopo
+    - ci si vede
 
-- intent: affirm
+- intent: affermare
   examples: |
-    - yes
+    - sì
     - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - infatti
+    - naturalmente
+    - ok
+    - corretto
+    - vero
+    - si
 
-- intent: deny
+- intent: negare
   examples: |
     - no
     - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - mai
+    - Non mi piace
+    - non credo
+    - Non è possibile
+    - non proprio
 
 - intent: hello world
   examples: |
@@ -57,114 +57,136 @@ nlu:
 
 - intent: weather
   examples: |
-    - What is the weather?
-    - Weather
-    - Give me weather
-    - [Milan](city)
+    - Com'è il meteo?
+    - Meteo
+    - Dimmi il meteo
+    - [Milano](city)
     - [New York](city)
     - [Las Vegas](city)
-    - [Paris](city)
-    - [Berlin](city)
-    - [Rome](city)
-    - [London](city)
+    - [Parigi](city)
+    - [Berlino](city)
+    - [Roma](city)
+    - [Londra](city)
     - [Madrid](city)
-    - [Lisbon](city)
+    - [Lisbona](city)
     - [Tokyo](city)
-    - [Washington](city)
+    - [Washigton](city)
     - [San Vito Chietino](city)
     - [Ancona](city)
     - [Chieti](city)
     - [Lanciano](city)
+    - [Caldarola](city)
 
 
 - intent: weather_type
   examples: |
-    - what is the [weather](wx_type) in [Berlin](city)?
-    - how's the [weather](wx_type) in [Christchurch](city)?
-    - Tell me the [weather](wx_type) in [Washington](city)
-    - [weather](wx_type) in [Auckland](city)
-    - is it [windy](wx_type) in [Auckland](city)
-    - [raining](wx_type) in [Wellington](city)
-    - [rain](wx_type) in [Auckland](city)
-    - [raining](wx_type) in [Christchurch](city)
-    - [temperature](wx_type) in [Madrid](city)
-    - what is the [temperature](wx_type) in [San Vito Chietino](city)?
-    - [wind](wx_type) in [Milan](city)
-    - [humidity](wx_type) in [Wellington](city)
-    - air [pressure](wx_type) in [Ancona](city)
-    - [pressure](wx_type) in [Christchurch](city)
-    - what is the [pressure](wx_type) in [Washington](city)
-    - [humidity](wx_type) in [Lisbon](city)
-    - [uvi](wx_type) in [Lanciano](city)
-    - what is the [humidity](wx_type) in [Auckland](city)
-    - [rain](wx_type) [Wellington](city)
-    - what is the [weather](wx_type) in [Chieti](city)?
-    - how's the [UV index](wx_type) in [San Vito Chietino](city)?
-    - Tell me the [weather](wx_type) in [Rome](city)
-    - [weather](wx_type) in [Auckland](city)
-    - [weather](wx_type) in [Milan](city)
-    - is it [windy](wx_type) in [Auckland](city)
-    - [raining](wx_type) in [Wellington](city)
-    - is it [cloudy](wx_type) in [Lisbon](city)
-    - [rain](wx_type) in [Auckland](city)
-    - [raining](wx_type) in [Ancona](city)
-    - [temperature](wx_type) in [Auckland](city)
-    - what is the [temperature](wx_type) in [New York](city)
-    - what is the [weather](wx_type) for [Wellington](city)
-    - what is the [pressure](wx_type) in [Auckland](city)
-    - air [pressure](wx_type) in [Auckland](city)
-    - what is the [humidity](wx_type) in [Auckland](city)
-    - air [humidity](wx_type) in [Auckland](city)
+    - qual è il [meteo](wx_type) a [Berlino](city)?
+    - com'è il [meteo](wx_type) a [Christchurch](city)?
+    - Dimmi il [meteo](wx_type) a [Washigton]( city)
+    - [meteo](wx_type) a [Auckland](city)
+    - è [ventoso](wx_type) a [Auckland](city)
+    - [piove](wx_type) a [Welligton](city)
+    - [pioggia](wx_type) a [Auckland](city)
+    - [pioggia](wx_type) a [Christchurch](city)
+    - [temperatura](wx_type) a [Madrid]( city)
+    - qual è la [temperatura](wx_type) a [San Vito Chietino](city)?
+    - [vento](wx_type) a [Milano](city)
+    - [umidità](wx_type) a [Welligton](city)
+    - aria [pressione](wx_type) a [Ancona](city)
+    - [pressione](wx_type) a [Christchurch](city)
+    - qual è la [pressione](wx_type) a [Washigton](city)
+    - [umidità](wx_type) a [Lisbona](city)
+    - [uvi](wx_type) a [Lanciano](city)
+    - qual è l'[umidità](wx_type) a [Auckland](city)
+    - Qual è la [pioggia](wx_type) di [Welligton](city)?
+    - qual è il [meteo](wx_type) di [Chieti](city)?
+    - com'è l'[indice UV](wx_type) a [San Vito Chietino](city)?
+    - Dimmi il [meteo](wx_type) a [Roma](city)
+    - [meteo](wx_type) a [Auckland](city)
+    - [meteo](wx_type) a [Milano](city)
+    - è [ventoso](wx_type) a [Auckland](city)?
+    - [piove](wx_type) a [Welligton](city)
+    - è [nuvoloso](wx_type) a [Lisbona](city)
+    - [pioggia](wx_type) a [Auckland](city)
+    - sta [piovendo](wx_type) a [Ancona](city)?
+    - [temperatura](wx_type) a [Auckland](city)
+    - qual è la [temperatura](wx_type) a [New York](city)
+    - qual è il [meteo](wx_type) per [Welligton](city)
+    - qual è la [pressione](wx_type) a [Auckland](city)
+    - qual è la [pressione](wx_type) dell'aria a [Auckland](city)
+    - qual è l'[umidità](wx_type) a [Auckland](city)
+    - [umidità](wx_type) dell'aria a [Auckland](city)
     - [uvi](wx_type) [Ancona](city)
-    - [weather](wx_type) [Wellington](city)
-    - how about [Wellington](city)
-    - [humidity] (wx_type) in [Chieti](city)
-    - [rain](wx_type) in [Ancona](city)
-    - [rain](wx_type) [Manchester](city)
+    - [meteo](wx_type) [Welligton](city)
+    - a [Welligton](city)
+    - [umidità](wx_type) a [Chieti](city)
+    - [pioggia](wx_type) a [Ancona](city)
+    - [pioggia](wx_type) [Manchester](city)
+    - [piove](wx_type) a [Ancona](city)?
+    - è [ventoso](wx_type) a [Milano](city)?
+    - è [umido](wx_type) a [Lisbona](city)?
+    - fa [caldo](wx_type) a [Madrid](city)?
+    - fa [freddo](wx_type) a [Milano](city)?
+    - è [fresco](wx_type) a [Torino](city)?
+    - sta [piovendo](wx_type) a [Caldarola](city)?
+    - è [ventoso](wx_type) a [Caldarola](city)?
+    
 
 
 # synonym defnitions to limit variations and to help NLU
-- synonym: current
+- synonym: attuale
   examples: |
-    - currently
-    - now
-    - current
+    - attualmente
+    - ora
+    - attuale
+    - in questo momento
 
-- synonym: today
+- synonym: oggi
   examples: |
-    - later
-    - today
-    - later today
-    - going to
+    - più tardi
+    - in giornata
+
+- synonym: pioggia
+  examples: |
+    - piovendo
+    - piove
   
+- synonym: vento
+  examples: |
+    - ventoso
+    - ventilato
+
+- synonym: umidità
+  examples: |
+    - umido
+    - bagnato
+    - aria umida
+    - umidità aria
+    - aria secca
+    - secchezza aria
+
 - synonym: uvi
   examples: |
     - uvi
     - UV
-    - UV index
+    - UV indice
+    - indice UV
     - UVI
 
-- synonym: rain
+- synonym: temperatura
   examples: |
-    - RAIN
-    - Rain
-    - rain
-    - raining
-
-- synonym: temperature
-  examples: |
-    - hot
-    - cold
-    - chilly
-    - heat
+    - caldo
+    - freddo
+    - fresco
+    - calore
     - temp
-    - temperature
+    - temperatura
 
-- synonym: weather
+- synonym: meteo
   examples: |
-    - weather
+    - tempo
     - wx
-    - forecast
+    - previsioni
 
     
 

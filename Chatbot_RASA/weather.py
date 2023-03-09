@@ -59,7 +59,7 @@ def get_weather_data(city):
     url = (
         f"https://api.openweathermap.org/data/3.0/onecall?"
         f"lat={lat}&lon={lon}"
-        f"&lang=en"
+        f"&lang=it"
         f"&units=metric"
         f"&exclude=hourly,daily,minutely"
         f"&appid={owm_api}"
@@ -72,11 +72,11 @@ def get_weather_data(city):
     except requests.HTTPError:
         status = response.status_code
         if status == 401:
-            print("Invalid API key.")
+            print("Chiave API non valida.")
         elif status == 404:
-            print("Invalid input.")
+            print("Input non valido.")
         elif status in (429, 443):
-            print("API calls per minute exceeded.")
+            print("Chiamate API al minuto superate.")
 
         sys.exit(1)
 

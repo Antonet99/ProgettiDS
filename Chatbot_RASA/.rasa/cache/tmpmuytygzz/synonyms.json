@@ -1,0 +1,19 @@
+{
+  "attualmente": "attuale",
+  "ora": "attuale",
+  "in questo momento": "attuale",
+  "più tardi": "oggi",
+  "in giornata": "oggi",
+  "uv": "uvi",
+  "uv indice": "uvi",
+  "indice uv": "uvi",
+  "uvi": "uvi",
+  "caldo": "temperatura",
+  "freddo": "temperatura",
+  "fresco": "temperatura",
+  "calore": "temperatura",
+  "temp": "temperatura",
+  "tempo": "meteo",
+  "wx": "meteo",
+  "previsioni": "meteo"
+}
