@@ -11,7 +11,7 @@ def get_api():
         case "darwin":
             path = "/Users/antoniobaio/Desktop/Progetti/ProgettiDS/config.json"
         case "linux":
-            path = "/home/antonet/vscode/ProgettiDS/config.json"
+            path = "/home/antonio/Scrivania/ProgettiDS/config.json"
         case "windows":
             path = "AGGIUNGI PATH"
             
