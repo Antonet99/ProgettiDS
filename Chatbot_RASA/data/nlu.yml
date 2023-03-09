@@ -1,43 +1,55 @@
 version: "3.1"
 
 nlu:
-- intent: saluto
+- intent: salutare
   examples: |
-    - Ciao
     - ciao
-    - we
-    - hey
-    - hei 
-    - ciao a tutti
+    - bella
+    - hei
+    - hello there
     - buongiorno
-    - buona sera
-    - Ehi, amico
-    - buong
+    - buona serata
+    - ehi
+    - ciccio
+    - andiamo
+    - hey amico
+    - buon giorno
     - buonasera
-    - buon pomeriggio
-    - buonanotte
+    - buon proseguimento
+
+- intent: start
+  examples: |
+    - start
+    - open
+    - begin
+    - init
+
+- intent: stop
+  examples: |
+    - quit
+    - close
+    - stop
 
 - intent: arrivederci
   examples: |
+    - cu
     - arrivederci
-    - ci vediamo dopo
+    - ci vediamo più tardi
     - buona notte
-    - Buona giornata
+    - arrivederci
+    - le auguro una buona giornata
     - ci vediamo in giro
     - ciao ciao
-    - ci vediamo dopo
-    - ci si vede
+    - cii vediamo piu tardi
 
-- intent: affermare
+- intent: affermativo
   examples: |
-    - sì
-    - y
-    - infatti
-    - naturalmente
-    - ok
-    - corretto
-    - vero
     - si
+    - ok
+    - infatti
+    - vero
+    - questo suona bene
+    - corretto
 
 - intent: negare
   examples: |
@@ -49,11 +61,18 @@ nlu:
     - Non è possibile
     - non proprio
 
-- intent: hello world
+- intent: bot_challenge
   examples: |
-    - world
-    - programming
-    - first program
+    - sei un bot?
+    - sei un umano?
+    - sei un maschio?
+    - sei una femmina?
+    - sei un uomo?
+    - sei una donna?
+    - quanti anni hai?
+    - sto parlando con un bot?
+    - sto parlando con una persona?
+    - sto parlando con un essere umano?
 
 - intent: weather
   examples: |

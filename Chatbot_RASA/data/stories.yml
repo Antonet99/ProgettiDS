@@ -4,8 +4,8 @@ stories:
 
 - story: happy path
   steps:
-  - intent: saluto
-  - action: utter_saluto
+  - intent: salutare
+  - action: utter_greet
 
 - story: wx_1
   steps:

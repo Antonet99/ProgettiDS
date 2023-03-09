@@ -7,3 +7,8 @@ rules:
   - intent: arrivederci
   - action: utter_arrivederci
 
+- rule: Start the conversation
+  steps: 
+  - intent: start
+  - action: utter_start
+

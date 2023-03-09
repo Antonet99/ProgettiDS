@@ -1,11 +1,12 @@
 version: "3.1"
 
 intents:
-  - saluto
+  - start
+  - salutare
+  - stop
   - arrivederci
-  - affermare
+  - affermativo
   - negare
-  - hello world
   - weather:
       use_entities: true
   - weather_type:
@@ -33,7 +34,10 @@ actions:
 
 responses:
 
-  utter_saluto:
+  utter_start:
+  - text: "Ciao! Sono il bot del meteo, chiedimi qualsiasi cosa riguardo: ecc. ecc"
+
+  utter_greet:
   - text: "Ciao!"
 
   utter_cheer_up:
@@ -47,7 +51,7 @@ responses:
   - text: "Grande, continua così!"
 
   utter_arrivederci:
-  - text: "Arrivederci"
+  - text: "Arrivederci!"
 
   utter_iamabot:
   - text: "Sono un bot, alimentato da Rasa."
