@@ -1,0 +1,18 @@
+[
+	{
+		"epoch": 1, 
+		"Training Loss": 0.38172496821521534, 
+		"Valid. Loss": 0.2763461714618963, 
+		"Valid. Accur.": 0.8870814307458144, 
+		"Training Time": "0:16:25", 
+		"Validation Time": "0:02:02"
+	}, 
+	{
+		"epoch": 2, 
+		"Training Loss": 0.18844016191026527, 
+		"Valid. Loss": 0.3221941561199997, 
+		"Valid. Accur.": 0.8940258751902587, 
+		"Training Time": "0:16:28", 
+		"Validation Time": "0:02:02"
+	}
+]
