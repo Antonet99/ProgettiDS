@@ -1,7 +1,8 @@
 /.DS_Store
-/datasets
-/BERT/bert_model_bbc
-/statsmodel
 /config.json
-/da rimettere
 /.python-version
+
+/datasets
+/statsmodel
+
+/BERT/bert_model_bbc
